@@ -19,13 +19,15 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/jeremyabannister/ExpressionErgonomics",
-            from: "0.3.1"
+            from: "0.3.2"
         )
     ],
     targets: [
         .target(
             name: "ProperValueType-module",
-            dependencies: ["ExpressionErgonomics"]
+            dependencies: [
+                "ExpressionErgonomics",
+            ]
         ),
         .target(
             name: "ProperValueTypeTestToolkit",
@@ -34,16 +36,20 @@ let package = Package(
                 .product(
                     name: "ExpressionErgonomicsTestToolkit",
                     package: "ExpressionErgonomics"
-                )
+                ),
             ]
         ),
         .testTarget(
             name: "ProperValueType-tests",
-            dependencies: ["ProperValueTypeTestToolkit"]
+            dependencies: [
+                "ProperValueTypeTestToolkit",
+            ]
         ),
         .testTarget(
             name: "ProperValueTypeTestToolkit-tests",
-            dependencies: ["ProperValueTypeTestToolkit"]
+            dependencies: [
+                "ProperValueTypeTestToolkit",
+            ]
         ),
     ]
 )
