@@ -19,8 +19,8 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/jeremyabannister/ExpressionErgonomics",
-            "0.3.4" ..< "0.4.0"
-        )
+            "0.3.5" ..< "0.4.0"
+        ),
     ],
     targets: [
         .target(
